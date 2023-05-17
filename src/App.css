@@ -1,0 +1,103 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  background: linear-gradient(black, 80%, #1e2030, #181926);
+  color: #939ab7;
+}
+
+#Contents {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-in-section {
+  visibility: hidden;
+}
+
+.is-visible-up {
+  opacity: 1;
+  visibility: visible;
+  animation: fade-up 0.5s;
+}
+
+.is-visible-down {
+  opacity: 1;
+  visibility: visible;
+  animation: fade-down 0.5s;
+}
+
+.section-title {
+  font-size: calc(100% + 2vw);
+}
+
+.section-header {
+  display: flex;
+  padding-bottom: 42px;
+}
+
+.section-header::after {
+  content: "";
+  display: block;
+  width: min(20%, 300px);
+  margin-top: 39px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: grey;
+}
+
+.section-contents {
+  max-width: 600px;
+  padding-left: calc(min(10%, 200px));
+}
+
+@media screen and (max-width: 800px) {
+  .section-header::after {
+    display: none;
+  }
+
+  .section-title {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section-contents {
+    padding: 0 5px;
+    text-align: center;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #cad3f5;
+}
+
+a:hover {
+  color: white;
+}

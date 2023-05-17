@@ -1,0 +1,96 @@
+#Intro {
+  animation: fade-down 0.5s;
+  height: 100vh;
+
+  /* positioning */
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#Intro .section-contents {
+  padding-top: 140px;
+}
+
+#intro-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#intro-skills-list {
+  display: flex;
+  flex-flow: wrap row;
+  gap: 12px;
+}
+
+.intro-skills-tile {
+  display: flex;
+  width: 60px;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.intro-skills-tile > i {
+  font-size: 2em;
+}
+
+.intro-skills-tile > small {
+  justify-self: flex-end;
+  font-size: 0.7em;
+}
+
+#intro-section-1,
+#intro-section-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#intro-video {
+  width: 200px;
+  height: auto;
+}
+
+#intro-subsection-1 {
+  gap: 10px;
+}
+
+#intro-subsection-2 {
+  gap: 20px;
+  padding-top: 50px;
+}
+
+#intro-subheader {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #939ab7;
+}
+
+.intro-title {
+  font-size: calc(100% + 1.8rem);
+  padding: 0;
+  margin: 0;
+  color: #cad3f5;
+}
+
+@media screen and (max-width: 768px) {
+  #intro-video {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #intro-skills {
+    align-items: center;
+  }
+
+  #intro-skills-list {
+    display: flex;
+    gap: 20px;
+    flex-flow: wrap row;
+    max-width: 320px;
+  }
+}
