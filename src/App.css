@@ -8,10 +8,13 @@ body {
   color: #939ab7;
 }
 
-#Contents {
+.contents {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  padding-top: 140px;
+  padding-left: calc(min(10%, 200px));
 }
 
 @keyframes fade-down {
@@ -73,7 +76,6 @@ body {
 
 .section-contents {
   max-width: 600px;
-  padding-left: calc(min(10%, 200px));
 }
 
 @media screen and (max-width: 800px) {
@@ -87,6 +89,10 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .contents {
+    padding: 100px 5px 0px 5px;
+  }
+
   .section-contents {
     padding: 0 5px;
     text-align: center;

@@ -1,32 +1,20 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
-export default function Header(
-  props: React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement>
-) {
-  const [toggle, setToggle] = useState(() => false);
-  const navigation = ["Intro"];
+// add types here to easily extend interface if required
+type HeaderSectionProps = React.ClassAttributes<HTMLDivElement> &
+  React.HTMLAttributes<HTMLDivElement>;
 
+const Header: React.FC<HeaderSectionProps> = ({ ...props }) => {
   return (
     <div {...props}>
-      <button
-        id="header-dropdown-button"
-        onClick={() => setToggle((prev) => !prev)}
-      >
-        <i className="bi bi-list"></i>
-      </button>
-      <div id="header-dropdown" className={toggle ? "" : "dropdown-hidden"}>
-        <div>
-          {navigation.map((nav: string, i: number) => {
-            return (
-              <a tabIndex={i + 5} href={`#${nav}`}>
-                {nav}
-              </a>
-            );
-          })}
-        </div>
+      <div id="Header-nav">
+        <Link to="/">Home</Link>
+        <Link to="/uni">Uni</Link>
       </div>
     </div>
   );
-}
+};
+
+export default Header;

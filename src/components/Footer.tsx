@@ -1,9 +1,11 @@
 import React from "react";
 import "../styles/Footer.css";
-export default function Footer(
-  props: React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement>
-) {
+
+// add types here to easily extend interface if required
+type FooterSectionProps = React.ClassAttributes<HTMLDivElement> &
+  React.HTMLAttributes<HTMLDivElement>;
+
+const Footer: React.FC<FooterSectionProps> = (props) => {
   return (
     <div {...props}>
       <div id="footer-content">
@@ -11,4 +13,6 @@ export default function Footer(
       </div>
     </div>
   );
-}
+};
+
+export default Footer;

@@ -7,10 +7,6 @@
   margin-bottom: 20px;
 }
 
-#Intro .section-contents {
-  padding-top: 140px;
-}
-
 #intro-skills {
   display: flex;
   flex-direction: column;

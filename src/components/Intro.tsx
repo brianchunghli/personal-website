@@ -27,12 +27,14 @@ const skills = [
 const baseDelay = 200;
 const skillSectionDelay = 1600;
 
-export default function Intro(
-  props: React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement>
-) {
+// add types here to easily extend interface if required
+type IntroSectionProps = React.ClassAttributes<HTMLDivElement> &
+  React.HTMLAttributes<HTMLDivElement>;
+
+const Intro: React.FC<IntroSectionProps> = (props) => {
   const [render, setRender] = useState<boolean>(false);
   const isMobile = window.innerWidth <= 768;
+
   const section1 = (
     <TypeAnimation
       sequence={["Hi", 400, "Hi, I'm Brian. 👋"]}
@@ -78,9 +80,12 @@ export default function Intro(
                 <div id="intro-skills-list">
                   {skills.map((item: string, i: number) => {
                     return (
-                      <FadeInSection delay={skillSectionDelay + i * baseDelay}>
+                      <FadeInSection
+                        key={i}
+                        delay={skillSectionDelay + i * baseDelay}
+                      >
                         <div className="intro-skills-tile">
-                          <i key={i} className={icons[item]} />
+                          <i key={`icon-${i}`} className={icons[item]} />
                           <small>{item}</small>
                         </div>
                       </FadeInSection>
@@ -94,4 +99,6 @@ export default function Intro(
       </div>
     </div>
   );
-}
+};
+
+export default Intro;
