@@ -6,6 +6,7 @@ body {
   margin: 0 auto;
   background: linear-gradient(black, 80%, #1e2030, #181926);
   color: #939ab7;
+  font-family: "Roboto Mono Variable", sans-serif;
 }
 
 .contents {
